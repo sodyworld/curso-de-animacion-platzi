@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animacion de Ola</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.container {
+			height: 500px;
+			background: #0f9bf6;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.content {
+			font-family: Arial;
+			text-align: center;
+			font-size: 2em;
+			color: rgba(255,255,255, .8);
+		}
+
+		.waves {
+			position: absolute;
+			bottom: -135px;
+			height: 527px;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.wave {
+			position: absolute;
+			left: -180px;
+			bottom: 0;
+			
+			height: 427px;
+			width: 2402px;
+			background: url(olas.png) center bottom no-repeat;
+			position: absolute;
+			animation: 5s wave ease-in-out infinite alternate;
+		}
+
+		.wave.a {
+			background-position: 0 -854px;
+		}
+		.wave.b {
+			background-position: 0 -427px;
+			animation-delay: .5s;
+		}
+
+		.wave.c {	
+			background-position: 0 0;
+			animation-delay: 1.2s;
+		}
+
+		.container {
+			position: relative;
+		}
+
+		@keyframes wave {
+			from {
+				transform: translate(0, 0);
+			}
+
+			50% {
+				transform: translate(-80px, 30px);
+			}
+			to {
+				transform: translate(160px, -60px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<h1>Hola mundo!</h1>
+			<p>Estoy en el curso de animacion para la web!</p>
+		</div>
+		<div class="waves">
+			<div class="wave a"></div>
+			<div class="wave b"></div>
+			<div class="wave c"></div>	
+		</div>
+	</div>
+</body>
+</html>
